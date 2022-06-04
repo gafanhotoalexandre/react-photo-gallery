@@ -13,5 +13,9 @@ export const api = {
   getOne: async (id: number) => {
     const response = await http.get(`/albums/${id}`);
     return response.data;
+  },
+  getAlbumPhotos: async (id: number) => {
+    const response = await http.get(`/albums/${id}/photos`);
+    return response.data;
   }
 }
