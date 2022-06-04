@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { api } from '../lib/api';
 
 // types
@@ -30,13 +30,13 @@ export function Albums() {
   return (
     <section className="flex flex-col gap-2">
       {albums.length > 0 && albums.map(album => (
-        <article
-          key={album.id}
+        <Link
+          to={`/albums/${album.id}`}
           className="border rounded p-4 mx-5 hover:border-slate-500 transition-all cursor-pointer"
-          onClick={() => handleAccessAlbum(album.id)}
+          key={album.id}
         >
           {album.title}
-        </article>
+        </Link>
       ))}
     </section>
   );
