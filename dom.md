@@ -1,0 +1,9 @@
+npm i axios react-router-dom
+
+BASE_URL -> axios
+
+API
+https://jsonplaceholder.typicode.com/albums
+https://jsonplaceholder.typicode.com/albums/1
+https://jsonplaceholder.typicode.com/albums/1/photos
+https://jsonplaceholder.typicode.com/photos/1
