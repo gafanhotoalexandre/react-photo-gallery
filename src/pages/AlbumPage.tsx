@@ -1,13 +1,17 @@
 import { useState, useEffect } from 'react';
-import { useParams, useNavigate } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
+
+// components
+import { BackButton } from '../components/BackButton';
 import { PhotoGrid } from '../components/PhotoGrid';
+
+// types and libs
 import { api } from '../lib/api';
 import { Album } from '../types/Album';
 import { Photo } from '../types/Photo';
 
 export function AlbumPage() {
   const { id } = useParams();
-  const navigate = useNavigate();
 
   const [album, setAlbum] = useState<Album | null>(null);
   const [albumPhotos, setAlbumPhotos] = useState<Photo[]>([]);
@@ -37,19 +41,9 @@ export function AlbumPage() {
     }
   }
 
-  function handleBackButton() {
-    navigate(-1);
-  }
-
   return (
     <section className="mx-5">
-      <nav>
-        <button
-          type="button"
-          className="px-5 py-2 rounded border border-blue-400 hover:bg-blue-400 hover:text-white transition-all"
-          onClick={handleBackButton}
-        >Voltar</button>
-      </nav>
+      <BackButton />
 
       <h2
         className="leading-tight text-3xl mt-0 mb-2 text-blue-600"
