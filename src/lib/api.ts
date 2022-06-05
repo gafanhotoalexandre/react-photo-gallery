@@ -7,7 +7,7 @@ const http = axios.create({
 
 export const api = {
   getAlbums: async () => {
-    const response = await http.get('/albums');
+    const response = await http.get(`/albums`);
     return response.data;
   },
   getOne: async (id: number) => {
@@ -16,6 +16,10 @@ export const api = {
   },
   getAlbumPhotos: async (id: number) => {
     const response = await http.get(`/albums/${id}/photos`);
+    return response.data;
+  },
+  getPhoto: async (id: number) => {
+    const response = await http.get(`/photos/${id}`);
     return response.data;
   }
 }
