@@ -35,7 +35,7 @@ export function PhotoPage() {
           <h2
             className="leading-tight text-3xl mt-0 mb-2 text-blue-600"
           >{photo.title}</h2>
-          <img src={photo.url} alt="" />
+          <img src={photo.url} alt="Image placeholder" />
         </>
       }
     </section>

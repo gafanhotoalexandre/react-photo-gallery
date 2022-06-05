@@ -17,7 +17,7 @@ export function PhotoGrid({ photos }: PhotoGridProps) {
             to={`/photos/${photo.id}`}
             className="bg-blue-500 flex-1 h-[150px] flex items-center justify-center p-10 m-5 rounded hover:rounded-2xl transition-all"
           >
-            Photo title: {photo.title}
+            {photo.title}
           </Link>
         </div>
       ))}
